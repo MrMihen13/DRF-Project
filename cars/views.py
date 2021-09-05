@@ -16,3 +16,5 @@ class CarsListView(generics.ListAPIView):
 class CarDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CarDetailSerializer
     queryset = Car.objects.all()
+
+# Need to make more view
