@@ -4,6 +4,8 @@ from ToDoS.models import Task
 
 
 class TaskDetailSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Task
         fields = '__all__'
@@ -12,4 +14,4 @@ class TaskDetailSerializer(serializers.ModelSerializer):
 class TaskListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ('id', 'body', 'description', 'done', 'time',)
+        fields = ('id', 'body', 'title', 'done', 'time',)
